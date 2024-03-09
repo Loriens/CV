@@ -1,0 +1,215 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2022 David Grigorian
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,10pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Vladislav Markov} \\[7.5pt]
+\raisebox{-0.05\height}\faMapMarker \ Tbilisi, Georgia \\[2.5pt]
+\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ Loriens} \ $|$ \ 
+\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ guardletdev} \ 
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Summary}
+I am an experienced iOS Engineer with extensive knowledge of different areas, from fancy and fast UI to developer tools and build time optimizations.
+
+%Experience
+\section{Work Experience}
+
+\textbf{iOS Engineer} \hfill May 2024 - Present \\
+Gradient \hfill \textit{Tbilisi, Georgia}
+
+Gradient and Persona - two generative AI-powered beautification and photo editing apps with more than 100kk users, often ranked #1 in stores
+
+\textbf{iOS Tech Lead} \hfill Sep 2022 - May 2024 \\
+VK \hfill \textit{Saint Petersburg, Russia}
+
+Zen app. It is a news and blog recommendation platform with MAU 80kk.
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item Implemented new navigation throughout the app. It improved the user experience.
+     \item Implemented News feed. It attracted new audencies and increased DAU by 10\%.
+     \item Refactored Articles feed and reduced FPS drop by 20\%.
+     \item Implemented Stream feed. It is a new way to consume content in the app with improved recommendations.
+ \end{itemize}
+
+\textbf{iOS Engineer} \hfill Oct 2021 - Sep 2022\\
+Innotech \hfill \textit{Saint Petersburg, Russia}
+
+Mobile banking app VTB Online with MAU 10kk, Core team.
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item Designed and developed reusable UI components for Design System used by 100+ iOS Engineers
+     \item Implemented automatic downloading of Design System tokens (images, colors, fonts) from Figma to Xcode by a script
+     \item Increased the number of UI components which support accessibility by 20\%
+ \end{itemize}
+
+\textbf{iOS Engineer} \hfill Jun 2021 - Sep 2021\\
+VK \hfill \textit{Saint Petersburg, Russia}
+
+OK.ru is the second most popular social network in Russia with MAU 50kk.
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item Refactored Bookmarks module. Rewrote legacy code from Objective-C to Swift.
+ \end{itemize}
+
+\textbf{iOS Engineer} \hfill Sep 2020 - Jun 2021\\
+Post Bank \hfill \textit{Saint Petersburg, Russia}
+
+Mobile banking app Pochta Bank (Post Bank) with MAU 1kk.
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item Implemented new features including auto payments on a loan. It reduced delays in loan payments by 20\%.
+ \end{itemize}
+
+\textbf{iOS Engineer} \hfill Aug 2019 - Sep 2020\\
+Fora Soft \hfill \textit{Saint Petersburg, Russia}
+
+Built an analog of Tik Tok. The app has a video editor and in-app subscriptions. It reached 1k MAU.
+
+\textbf{iOS Engineer} \hfill Apr 2019 - Aug 2019\\
+AppCraft \hfill \textit{Saint Petersburg, Russia}
+
+Built a service that helps people to find psychologists. It has private chats and supports dark theme.
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+
+Bachelor degree, Applied Mathematics, Fundamental Informatics and
+Programming & \hfill 2014 - 2018\\ 
+\textbf{Saint Petersburg State University}
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Presentations}
+\begin{itemize}
+\itemsep -7pt {}
+\item{\textbf{Technical Debt. What is it and how to work with it?}\\ \textit{Link}: \href{https://github.com/Loriens/TechnicalDebt}{TechnicalDebt}}
+\end{itemize}
+
+
+
+\end{document}
